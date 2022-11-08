@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
 	if(!sameSize(argv[1], argv[2]))				// check file sizes
 	{
-		printf("File sizes do not match. The files are not identical.");
+		puts("File sizes do not match. The files are not identical.");
 		exit(0);
 	}
 	
@@ -27,13 +27,13 @@ int main(int argc, char* argv[])
 	{
 		if(getc(f1) != getc(f2))
 		{
-			printf("Binary data does not match. The files are not identical.");
+			puts("Binary data does not match. The files are not identical.");
 			fclose(f1); fclose(f2);
 			exit(0);
 		}
 	}
 
-	printf("The files are identical.");
+	puts("The files are identical.");
 	fclose(f1); fclose(f2);
 }
 
@@ -54,7 +54,7 @@ int sameSize(char* file1, char* file2)
 // opens input files for reading; displays an error message if there is a problem opening a file
 void openFiles(FILE** f1, FILE** f2, char* arg1, char* arg2)
 {
-	*f1 = fopen(arg1, "rb");          	    // open first file
+	*f1 = fopen(arg1, "rb");          	    	// open first file
 	if(!f1)
 	{
 		char errmsg[500];
@@ -63,7 +63,7 @@ void openFiles(FILE** f1, FILE** f2, char* arg1, char* arg2)
 		exit(1);
 	}
 
-	*f2 = fopen(arg2, "rb");                  // open second file
+	*f2 = fopen(arg2, "rb");                    // open second file
 	if(!f2)
 	{
 		char errmsg[500];
